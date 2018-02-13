@@ -6,6 +6,8 @@
 package com.sg.dragondungeon;
 
 import com.sg.dragondungeon.controller.Controller;
+import com.sg.dragondungeon.dao.dao;
+import com.sg.dragondungeon.dao.daoImpl;
 import com.sg.dragondungeon.ui.UserIO;
 import com.sg.dragondungeon.ui.UserIOImpl;
 import com.sg.dragondungeon.ui.View;
@@ -18,7 +20,8 @@ public class App {
     public static void main(String[] args) {
         UserIO io = new UserIOImpl();
         View view = new View(io);
-        Controller controller = new Controller(view , io);
+        dao leaderBoard = new daoImpl();
+        Controller controller = new Controller(view, leaderBoard);
         controller.run();
     }
 }

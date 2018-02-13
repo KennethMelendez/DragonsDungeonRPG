@@ -8,6 +8,7 @@ package com.sg.dragondungeon.ui;
 import com.sg.dragondungeon.dao.PersistenceException;
 import com.sg.dragondungeon.dto.Monster;
 import com.sg.dragondungeon.dto.Player;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -143,7 +144,7 @@ public class View {
         io.displayMessage("");
         io.displayMessage("******* BATTLE MODE *******");
         io.displayMessage("");
-        int attackBoost = sixSidedDiceRoll();        
+        int attackBoost = sixSidedDiceRoll();
         int playersAttack = main.getAttackPoints() + attackBoost;
         main.setAttackPoints(playersAttack);
         io.displayMessage("You encountered a monster!!!");
@@ -154,7 +155,7 @@ public class View {
         io.displayMessage(currentMonster.getName() + " Attacked! ");
         if (main.getAttackPoints() > currentMonster.getHP()) {
             io.displayMessage("You survived!!");
-            int exp = 0;
+            int exp = main.getExp();
 
             main.setExp(exp += 2);
         } else {
@@ -162,5 +163,14 @@ public class View {
 
         }
         return main;
+    }
+
+    public void viewLeaderboard(List<Player> leaderBoard) {
+        io.displayMessage("");
+        io.displayMessage(" === SCORE === ");
+        for (Player display : leaderBoard) {
+            io.displayMessage("| Hero : " + display.getName() + " | Weapon used : " + display.getWeapon() + " | SCORE/EXP : " + display.getExp());
+            io.displayMessage("");
+        }
     }
 }

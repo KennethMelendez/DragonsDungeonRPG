@@ -6,10 +6,13 @@
 package com.sg.dragondungeon.controller;
 
 import com.sg.dragondungeon.dao.PersistenceException;
+import com.sg.dragondungeon.dao.dao;
 import com.sg.dragondungeon.dto.Monster;
 import com.sg.dragondungeon.dto.Player;
 import com.sg.dragondungeon.ui.UserIO;
 import com.sg.dragondungeon.ui.View;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,10 +24,11 @@ import java.util.logging.Logger;
 public class Controller {
 
     View view;
+    dao leaderBoard;
 
-    public Controller(View view, UserIO io) {
+    public Controller(View view,dao leaderBoard) {
         this.view = view;
-
+        this.leaderBoard = leaderBoard;
     }
 
     String[] gameSteps = {"*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*",};
@@ -82,11 +86,14 @@ public class Controller {
                 }
 
                 youTookThisManyStepsDisplay(x);
-            }
+            } // end of for loop
             if (youWin == true) {
                 congratulationsWinnerMessage();
             }
-
+            
+            leaderBoard.addscoreBoard(Silentprotagonist.getName(), Silentprotagonist);
+            List<Player> scoreList = leaderBoard.viewLeaderBoard();
+            view.viewLeaderboard(scoreList);
         } catch (PersistenceException ex) {
             view.displayInGameMsg(ex.getMessage());
         }
