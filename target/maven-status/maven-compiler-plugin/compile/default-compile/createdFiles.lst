@@ -1,0 +1,8 @@
+com\sg\dragondungeon\dto\Monster.class
+com\sg\dragondungeon\ui\UserIOImpl.class
+com\sg\dragondungeon\controller\Controller.class
+com\sg\dragondungeon\dao\PersistenceException.class
+com\sg\dragondungeon\ui\View.class
+com\sg\dragondungeon\ui\UserIO.class
+com\sg\dragondungeon\App.class
+com\sg\dragondungeon\dto\Player.class
