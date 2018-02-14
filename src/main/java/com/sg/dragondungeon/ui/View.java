@@ -144,11 +144,12 @@ public class View {
         io.displayMessage("");
         io.displayMessage("******* BATTLE MODE *******");
         io.displayMessage("");
-        int attackBoost = sixSidedDiceRoll();
-        int playersAttack = main.getAttackPoints() + attackBoost;
+       // int attackBoost = sixSidedDiceRoll();
+        int playersAttack = main.getAttackPoints();
+
         main.setAttackPoints(playersAttack);
         io.displayMessage("You encountered a monster!!!");
-        io.displayMessage("You ready your weapon...ATTACK INCREASED BY " + attackBoost);
+        io.displayMessage("You ready your weapon...");
         io.displayMessage(main.getName() + " has " + main.getAttackPoints() + " attack points.");
         io.displayMessage(main.getName() + " Attacked! ");
         this.hitEnterToContinue();

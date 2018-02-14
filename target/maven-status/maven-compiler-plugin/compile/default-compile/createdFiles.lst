@@ -1,4 +1,6 @@
 com\sg\dragondungeon\dto\Monster.class
+com\sg\dragondungeon\dao\daoImpl.class
+com\sg\dragondungeon\dao\dao.class
 com\sg\dragondungeon\ui\UserIOImpl.class
 com\sg\dragondungeon\controller\Controller.class
 com\sg\dragondungeon\dao\PersistenceException.class

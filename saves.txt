@@ -1,0 +1,6 @@
+Kenneth::broad sword::0
+Sir Kenneth::broad sword::0
+Spongebob::broad sword::0
+KENNAH::crossbow::2
+Gillian::flail::0
+Kenny::broad sword::0

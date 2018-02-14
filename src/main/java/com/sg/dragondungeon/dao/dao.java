@@ -13,6 +13,12 @@ import java.util.List;
  * @author kmlnd
  */
 public interface dao {
-     void addscoreBoard(String playerName, Player currentPlayer);
-     List<Player> viewLeaderBoard();
+
+    void addscoreBoard(String playerName, Player currentPlayer) throws PersistenceException;
+
+    List<Player> viewLeaderBoard();
+
+    void saveGameBoard() throws PersistenceException;
+
+    void LoadGameBoard() throws PersistenceException;
 }
